@@ -18,9 +18,9 @@ class inputNo() :
     conn = cx_Oracle.connect('bigdata/admin1234@localhost:1521/xe') # oracle 서버와 연결 (connection 맺기)
     
     def input(self):
-    
+        
         serviceKey = "Qdb5KydABzjhFWA4CzQ4gSgtLMnxo6C5jGrv%2FOLaQ6evALcjMQDkPllXowGQzr9DzraCGymtgDwuQmge6QJzng%3D%3D"
-
+    
         print(self.conn.version) # connection 확인
         oracle = self.conn.cursor() # cursor 객체 얻어오기
          

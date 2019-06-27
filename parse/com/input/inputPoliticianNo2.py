@@ -136,7 +136,7 @@ class inputNo() :
             count += 1
             print(count, "명\t", pno, "\t", kr_name, "\t완료\t")
             print("====================================================================================================")
-            self.conn.commit()
+            oracle.commit()
         
         print("update 완료")
      

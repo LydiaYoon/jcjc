@@ -24,7 +24,7 @@ select * from bill;
 select * from bill where proposer = '김성태' or proposer = '최경환' 
 select * from bill where proposer_kind = '의원' and politician_no is null;
 
-###
+### 
 
 select count(*) from bill where politician_no is not null
 select count(*) from bill where politician_no is null
@@ -34,3 +34,7 @@ select * from bill where politician_no is null and proposer_kind = '의원'
 
 select proposer, instr(proposer, '의원') from bill where proposer_kind = '의원';
 select proposer, substr(proposer, 0, instr(proposer, '의원')-1) as "politician_kor_name" from bill where politician_no is null and proposer_kind = '의원' and rownum <= 5;
+
+
+
+select * from bill where proposer = '이동섭'

@@ -18,52 +18,27 @@ class inputBill():
         
         count = 0
          
-        # waitBill insert
+        # 1. mongoDB의 waitBill 컬렉션을 조회한다.
         items = self.con['waitBill'].find()
-                
-        # waitBill query
-        sql_insert = """insert into bill
-        (bill_no, bill_name,
-        politician_no, proposer, proposer_hj, proposer_kind,
-        propose_dt, submit_dt, committee_name,
-        summary)
-        values(
-        :bill_no, :bill_name,
-        :politician_no, :proposer, 
-        :proposer_hj, :proposer_kind,
-        to_date(:propose_dt, 'YYYY-MM-DD'), 
-        to_date(:submit_dt, 'YYYY-MM-DD'), 
-        :committee_name,
-        :summary)"""
           
         for item in items:
             print("item :\t", item)
             count += 1
              
             row = {} # Dict 객체 생성
-            row['bill_no'] = item['billno']
-            row['bill_name'] = item['billname']
-            row['proposer'] = item['proposer']
-            row['proposer_kind'] = item['proposerkind']
-            row['propose_dt'] = item['proposedt']
-     
-            if 'submitdt' in item:
-                row['submit_dt'] = item['submitdt']
-            else:
-                row['submit_dt'] = ''
-              
-            if 'committeename' in item:
-                row['committee_name'] = item['committeename']
-            else:
-                row['committee_name'] = ''
+            row['bill_no'] = item.get('billno')
+            row['bill_name'] = item.get('billname')
+            row['proposer'] = item.get('proposer')
+            row['proposer_kind'] = item.get('proposerkind')
+            row['propose_dt'] = item.get('proposedt')
+            row['submit_dt'] = item.get('submit_dt')
+            row['committee_name'] = item.get('committeename')
              
              
-            # summary
+            # 2. mongoDB의 billInfo 컬렉션에서 summary 정보를 가져온다.
             for info_item in self.con['billInfo'].find({"billno" : row['bill_no']}): 
-                if 'summary' in info_item:
-                    row['summary'] = info_item['summary']
-                else:
-                    row['summary'] = ''
+                row['summary'] = info_item.get('summary')
+
 
             # politician_no
             # mongoDB에 찾는 정치인 정보가 없을 수 있기 때문에 정치인번호와 한자이름을 None으로 초기화
@@ -73,15 +48,33 @@ class inputBill():
             index = row['proposer'].find('의원') # 제안자 컬럼에서 '의원'문자열의 인덱스 위치를 찾아서 저장 
             if row['proposer_kind'] == '의원' and index > -1: # 제안자 분류가 '의원'이고 제안자 컬럼에 '의원'문자열이 있을 경우
                 kor_name = row['proposer'][:index] # 0번째 인덱스부터 '의원'문자열 앞까지 잘라서 저장
+                
                 if kor_name != '김성태' and kor_name != '최경환': # 동명이인(김성태, 최경환) 별도 처리하기 위해 제외
                     for no_item in self.con['politicianInfo'].find({"empnm": kor_name}):
-                            print(no_item['deptcd'], no_item['empnm'], no_item['hjnm'])
-                            row['politician_no'] = no_item['deptcd']
-                            row['proposer'] = no_item['empnm']
-                            row['proposer_hj'] = no_item['hjnm']
-                    
+                            row['politician_no'] = no_item.get('deptcd')
+                            row['proposer'] = no_item.get('empnm')
+                            row['proposer_hj'] = no_item.get('hjnm')
+                            print(row['politician_no'], row['proposer'], row['proposer_hj'])
+                            
+            row['analysisCheck'] = '0'
             print("row :\t", row)
 
+                    
+            # waitBill query
+            sql_insert = """insert into bill
+            (bill_no, bill_name,
+            politician_no, proposer, proposer_hj, proposer_kind,
+            propose_dt, submit_dt, committee_name,
+            summary)
+            values(
+            :bill_no, :bill_name,
+            :politician_no, :proposer, 
+            :proposer_hj, :proposer_kind,
+            to_date(:propose_dt, 'YYYY-MM-DD'), 
+            to_date(:submit_dt, 'YYYY-MM-DD'), 
+            :committee_name,
+            :summary)"""
+            
             # waitBill execute
             oracle.execute(sql_insert, 
                         bill_no = row['bill_no'], 
@@ -95,11 +88,15 @@ class inputBill():
                         committee_name = row['committee_name'],
                         summary = row['summary']
                         )
+            
+            # mongoDB Insert
+            self.con['bill'].insert_one(row)
+            
             print(count, "\twaitBill insert\t")
             print("===========================================================================")
      
         print("waitBill 입력 완료!")
-        self.conn.commit()
+        oracle.commit() # oracle commit
         
 
 if __name__ == '__main__':
