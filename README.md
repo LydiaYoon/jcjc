@@ -1,16 +1,8 @@
 # Project jcjc
 공공데이터의 국회의원 및 의안 정보 API 를 활용하여  
 각 지역구별 정치인의 의정활동 정보와 공약 평가 서비스를 제공
-
-|  |  |
-| :------------ | :----------- |   
-| Development Environment | Windows 10, CentOS |  
-| Front-end | HTML5, CSS3, JavaScript, jQuery, Bootstrap |  
-| Back-end | Java 1.8, Python 3.7, Spring Framework 4.0 |  
-| DB | Oracle 10g, MongoDB |  
-| Hadoop Eco-System | Flume, Hive, Spark |  
-| library | BeautifulSoup 4, Pandas, KoNLPy(Komoran) |  
-| Documentation | Google Docs, Object AID, DA# Modeler5 ||  
+  
+  
   
   
 # 서비스 개요
@@ -49,6 +41,31 @@
 
     - __후보자 비교__  
       'Project 정치정치’에서는 비교해보고 싶은 후보자를 선택하여 공약이행률, 활동성 지수, 관심 분야, 관계도 형태소 분석 결과 등을 다각도로 비교하여 후보자별 특장점을 한눈에 볼 수 있도록 비교분석 서비스를 제공한다.
+  
+# 프로젝트 수행
+### 1) 팀 구성 및 역할분담
+| 이름 | 역할 |  
+| :------- | :----------- |
+| 오승룡 |  |  
+| 윤나래 |  |  
+| 임덕현 |  |  
+| 박수연 |  ||
+  
+# 설계  
+### 1) DB Diagram
+  
+### 2) Class Diagram
+  
+# 시스템 구현
+|  |  |
+| :------------ | :----------- |   
+| Development Environment | Windows 10, CentOS |  
+| Front-end | HTML5, CSS3, JavaScript, jQuery, Bootstrap |  
+| Back-end | Java 1.8, Python 3.7, Spring Framework 4.0 |  
+| DB | Oracle 10g, MongoDB |  
+| Hadoop Eco-System | Flume, Hive, Spark |  
+| library | BeautifulSoup 4, Pandas, KoNLPy(Komoran) |  
+| Documentation | Google Docs, Object AID, DA# Modeler5 ||  
 
 
 
