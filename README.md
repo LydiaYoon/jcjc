@@ -33,7 +33,7 @@
     - __공약 평가__  
       ‘Project 정치정치’에서는 정치인이 내건 공약 정보를 보여주는 것은 물론, 사용자가 공약에 대해 평가할 수 있는 서비스를 제공한다. 공약 평가 서비스를 통해 유권자는 해당 공약에 대한 의견을 다른 사용자와 나누고, 평가할 수 있다.
 
-    - __의정활동 평가__  
+    - __의정활동 상세__  
       ‘Project 정치정치’에서는 정치인이 20대 총선에서 발의한 모든 의안을 보여준다. 단순히 정치인이 발의한 의안을 보여주는 것이 아니라 발의한 의안이 본회의를 통과됐는지, 계류 중이라면 진행상황에 대한 정보를 함께 제공함으로써, 해당 국회에서 정치인이 얼마나 적극적으로 의정활동을 수행했는지를 판가름할 수 있는 지표를 제공한다.
 
     - __활동성 지수__  
@@ -44,24 +44,30 @@
   
 # 프로젝트 수행
 ### 1) 팀 구성 및 역할분담
-| 이름 | 역할 |  
-| :------- | :----------- |
-| 오승룡 |  |  
-| 윤나래 |  |  
-| 임덕현 |  |  
-| 박수연 |  ||
+  | 이름 | 역할 |  
+  | :------- | :----------- |
+  | 오승룡 |  |  
+  | 윤나래 |  |  
+  | 임덕현 |  |  
+  | 박수연 |  ||
   
 # 설계  
-### 1) DB Diagram
-  
-### 2) Class Diagram
+### 1) DB Diagram  
+  ![](./image/jcjc_db.png)
+### 2) Class Diagram  
+  [클래스 다이어그램](https://github.com/LydiaYoon/jcjc/tree/master/image/class_diagram)
+
+### 3) 실행 화면  
+  ![](./image/jcjc_capture.png)
   
 # 시스템 구현
 |  |  |
 | :------------ | :----------- |   
 | Development Environment | Windows 10, CentOS |  
+| IDE | Eclipse Jee 2018-09 | 
 | Front-end | HTML5, CSS3, JavaScript, jQuery, Bootstrap |  
 | Back-end | Java 1.8, Python 3.7, Spring Framework 4.0 |  
+| WAS | tomcat 8.5 |  
 | DB | Oracle 10g, MongoDB |  
 | Hadoop Eco-System | Flume, Hive, Spark |  
 | library | BeautifulSoup 4, Pandas, KoNLPy(Komoran) |  
