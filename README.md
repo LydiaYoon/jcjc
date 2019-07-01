@@ -3,11 +3,6 @@
 공공데이터의 국회의원 및 의안 정보 API 를 활용하여  
 각 지역구별 정치인의 의정활동 정보와 공약 평가 서비스를 제공
 
-- Front-end : HTML5, CSS3, JavaScript, jQuery, Bootstrap
-- Back-end : Java 1.8, Spring Framework 4.0, Oracle 10g
-- Hadoop Eco-System : Flume, Hive, Spark
-- documentation : Google Docs, Object AID, DA# Modeler5
-
 | Development Environment | Windows 10, CentOS |  
 | :------------ | :----------- |   
 | Front-end | HTML5, CSS3, JavaScript, jQuery, Bootstrap |  
