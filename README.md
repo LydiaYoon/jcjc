@@ -61,7 +61,7 @@
 <br>
   
 ### 2) 일정
-
+  [>> 일정](https://github.com/LydiaYoon/jcjc/blob/master/image/jcjc_schedule.png)
   
 <br><br>  
 # 설계  
@@ -71,7 +71,7 @@
 <br>    
   
 ### 2) Class Diagram  
-  [클래스 다이어그램](https://github.com/LydiaYoon/jcjc/tree/master/image/class_diagram)
+  [>> 클래스 다이어그램](https://github.com/LydiaYoon/jcjc/tree/master/image/class_diagram)
   
 <br>    
   
