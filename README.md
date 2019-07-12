@@ -61,6 +61,7 @@
 <br>
   
 ### 2) 일정
+  2019년 3월 26일 ~ 2019년 4월 23일
   [>> 일정](https://github.com/LydiaYoon/jcjc/blob/master/image/jcjc_schedule.png)
   
 <br><br>  
