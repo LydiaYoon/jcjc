@@ -1,1 +1,0 @@
-select * from bill where proc_dt is null;
