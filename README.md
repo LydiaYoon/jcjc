@@ -51,18 +51,31 @@
   
 # 프로젝트 수행
 ### 1) 팀 구성 및 역할분담
-  | 이름 | 역할 |  
-  | :------- | :----------- |
-  | 오승룡 | 의정활동 평가 |  
-  | 윤나래 | 공약 평가 게시판 |  
-  | 임덕현 | DB 설계, 지도 API |  
-  | 박수연 | DB 설계 ||  
+  | 이름 | 역할 |    |
+  | :------- | :----------- | :------- |  
+  | 오승룡 | 회원가입, 의정활동 평가 |  Spring, Oracle, Mybatis  |  
+  | 윤나래 | 회원가입, 공약 평가 게시판 |  Spring,  Oracle, Mybatis  |  
+  | 임덕현 | DB 설계, 지도 API |  Oracle  |  
+  | 박수연 | DB 설계, DAO 구현 |  Oracle, MyBatis  ||  
   
 <br>
   
 ### 2) 일정
-  2019년 3월 26일 ~ 2019년 4월 23일
+  2019년 3월 26일 ~ 2019년 4월 23일  
   [>> 일정](https://github.com/LydiaYoon/jcjc/blob/master/image/jcjc_schedule.png)
+  
+<br>
+  
+### 3) 시스템 구현  
+|  |  |
+| :------------ | :----------- |   
+| Development Environment | Windows 10 |  
+| IDE | Eclipse Jee 2018-09 | 
+| Front-end | HTML5, CSS3, JavaScript, jQuery, Bootstrap |  
+| Back-end | Java 1.8, Python 3.7, Spring Framework 4.0 |  
+| WAS | tomcat 8.5 |  
+| DB | Oracle 10g |  
+| Documentation | Google Docs, Object AID, DA# Modeler5 ||  
   
 <br><br>  
 # 설계  
@@ -79,21 +92,6 @@
 ### 3) 실행 화면  
   ![](./image/jcjc_capture.png)  
   
-  
-  
-<br><br>  
-  
-# 시스템 구현
-|  |  |
-| :------------ | :----------- |   
-| Development Environment | Windows 10 |  
-| IDE | Eclipse Jee 2018-09 | 
-| Front-end | HTML5, CSS3, JavaScript, jQuery, Bootstrap |  
-| Back-end | Java 1.8, Python 3.7, Spring Framework 4.0 |  
-| WAS | tomcat 8.5 |  
-| DB | Oracle 10g |  
-| Documentation | Google Docs, Object AID, DA# Modeler5 ||  
-
 
 
 
